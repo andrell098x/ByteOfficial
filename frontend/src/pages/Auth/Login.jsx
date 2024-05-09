@@ -63,7 +63,7 @@ const Login = () => {
                 <form onSubmit={submitHandler} className='container w-full flex justify-center items-center flex-col'>
 
                     <div className='my-[1rem]'>
-                        <label htmlFor="email" className='block text-sm font-medium text-[#e8e2da]'>Email</label>
+                        <label htmlFor="email" className='block text-sm font-medium text-[#5a5856]'>Email</label>
 
                         
                         <input type="email" id='email' className='mt-1 p-2 border rounded w-full border-[black]' value={email} onChange={e => setEmail(e.target.value)} autoComplete="email" />
@@ -71,10 +71,10 @@ const Login = () => {
 
 
                     <div className='my-[1rem]'>
-                        <label htmlFor="password" className='block text-sm font-medium text-[#e8e2da]'>Password</label>
+                        <label htmlFor="password" className='block text-sm font-medium text-[#5a5856]'>Password</label>
 
 
-                        <input type="password" id='password' className='mt-1 p-2 border rounded w-full border-[black]' style={{ backgroundColor: '#e8e2da' }} value={password} onChange={e => setPassword(e.target.value)}/>
+                        <input type="password" id='password' className='mt-1 p-2 border rounded w-full border-[black]'  value={password} onChange={e => setPassword(e.target.value)}/>
                     </div>
 
 

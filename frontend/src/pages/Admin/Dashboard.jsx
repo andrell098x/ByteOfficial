@@ -4,6 +4,7 @@ import Chart from 'react-apexcharts';
 import { useGetTotalOrdersQuery, useGetTotalSalesQuery, useGetTotalSalesByDateQuery } from '../../redux/api/orderApiSlice.js';
 import OrderList from './OrderList.jsx';
 import Loader from '../../components/Loader.jsx';
+import { FaUser } from "react-icons/fa";
 
 const Dashboard = () => {
     const {data: sales, isLoading} = useGetTotalSalesQuery();
@@ -29,7 +30,10 @@ const Dashboard = () => {
             },
             title: {
                 text: 'Sales Trend',
-                align: 'left'
+                align: 'left',
+                style: {
+                    fontSize: '1.875rem' 
+                }
             },
             grid: {
                 borderColor: '#ccc'
@@ -90,45 +94,54 @@ const Dashboard = () => {
     console.log(state.series)
 
   return (
+
     <>
-        <section className='xl:ml-[4rem] md:ml-[0rem] mt-[10rem]'> 
-            <div className="w-[80%] flex justify-around flex-wrap" >
-                <div className="rounded-lg bg-white p-5 w-[20rem] mt-5">
-                    <div className="font-bold rounded-full w-[3rem] bg-black text-center p-3 text-white">$</div>
-
-                    <p className="mt-5">Sales</p>
-                        <h1 className="text-xl font-bold">
-                            $ {isLoading ? <Loader /> : sales.totalSales.toFixed(2)}
-                        </h1>
-                    
-                </div>
-
-                <div className="rounded-lg bg-white p-5 w-[20rem] mt-5">
-                    <div className="font-bold rounded-full w-[3rem] bg-black text-center p-3 text-white">$</div>
-
-                    <p className="mt-5">Customers</p>
-                        <h1 className="text-xl font-bold">
-                            {isLoading ? <Loader /> : customers?.length}
-                        </h1>
-                    
-                </div>
-
-                <div className="rounded-lg bg-white p-5 w-[20rem] mt-5">
-                    <div className="font-bold rounded-full w-[3rem] bg-black text-center p-3 text-white">$</div>
-
-                    <p className="mt-5">All Orders</p>
-                        <h1 className="text-xl font-bold">
-                            {isLoading ? <Loader /> : orders?.totalOrders}
-                        </h1>
-                    
-                </div>
+   <style>{`
+   .chart-container svg text {
+    font-size: 1.875rem; 
+}
+`}</style>
+       <section className='xl:ml-[4rem] md:ml-[0rem] mt-[10rem]'>
+    <div className="w-[80%] flex justify-around flex-wrap">
+        {/* Sales Component */}
+        <div className="rounded-lg bg-white p-5 w-[20rem] mt-5 shadow-lg">
+            <div className="flex items-center justify-center rounded-full w-[3rem] h-[3rem] bg-black text-white">
+                <span className="text-2xl font-bold">$</span>
             </div>
+            <p className="mt-5 text-gray-600">Total Sales</p>
+            <h1 className="text-3xl font-bold text-blue-600 mt-2">
+                {isLoading ? <Loader /> : `$ ${sales.totalSales.toFixed(2)}`}
+            </h1>
+        </div>
 
-
-
-            <div className='m;-[10rem] mt-[4rem]'>
-                <Chart options={state.options} series={state.series} type='bar' width='50%'/>
+        {/* Customers Component */}
+        <div className="rounded-lg bg-white p-5 w-[20rem] mt-5 shadow-lg">
+            <div className="flex items-center justify-center rounded-full w-[3rem] h-[3rem] bg-black text-white">
+                <span className="text-2xl font-bold"><FaUser /></span>
             </div>
+            <p className="mt-5 text-gray-600">Total Customers</p>
+            <h1 className="text-3xl font-bold text-green-600 mt-2">
+                {isLoading ? <Loader /> : customers?.length}
+            </h1>
+        </div>
+
+        {/* All Orders Component */}
+        <div className="rounded-lg bg-white p-5 w-[20rem] mt-5 shadow-lg">
+            <div className="flex items-center justify-center rounded-full w-[3rem] h-[3rem] bg-black text-white">
+                <span className="text-2xl font-bold">O</span>
+            </div>
+            <p className="mt-5 text-gray-600">Total Orders</p>
+            <h1 className="text-3xl font-bold text-purple-600 mt-2">
+                {isLoading ? <Loader /> : orders?.totalOrders}
+            </h1>
+        </div>
+    </div>
+
+
+
+
+ 
+
 
             <div className='mt-[4rem]'>
                 <OrderList />

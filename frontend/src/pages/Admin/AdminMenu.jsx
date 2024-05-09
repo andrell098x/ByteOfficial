@@ -33,7 +33,7 @@
                     <ul className="list-none mt-2">
                         <li>
                             <NavLink className='list-tem py-2 px-3 block mb-5 hover:sm:shadow-md md:shadow-lg lg:shadow-xl xl:shadow-2xl rounded-sm' to='/admin/dashboard' style={({isActive}) => ({
-                                color: isActive ? 'red' : 'black',
+                                color: isActive ? 'green' : 'black',
                             })}>
                                 Admin Dashboard
                             </NavLink>

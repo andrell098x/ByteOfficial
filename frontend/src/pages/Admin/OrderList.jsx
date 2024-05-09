@@ -12,9 +12,9 @@ const OrderList = () => {
     <>
       {isLoading ? (<Loader />) : error ? (<Message variant='danger'>{error?.data?.message || error.error}</Message>) :
       (
-        <table className="container mx-auto mt-[10rem]">
-            <thead className="w-full border">
-                <tr className="mb-[5rem]">
+        <table className="container mx-auto mt-[10rem] shadow-lg ">
+            <thead className="w-full border-[6px] h-[50px] text-xl font-bold">
+                <tr className="mb-[9rem]">
                     <td className="text-left pl-1">Items</td>
                     <td className="text-left pl-1">Id</td>
                     <td className="text-left pl-1">User</td>

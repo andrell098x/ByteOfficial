@@ -21,8 +21,8 @@ const Header = () => {
 
 
   return (
-    <>
-      <div className="flex justify-around">
+    <> 
+      <div className="flex justify-around mt-[7rem]">
         <div className="xl:block lg:hidden md:hidden sm:hidden relative">
           <ProductsSlide />
           <Link to='/products'>

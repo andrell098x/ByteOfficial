@@ -63,7 +63,7 @@ const ProductInfo = () => {
       <div className="mt-[10rem] text-2xl ">
         <Link to="/" className="text-black font-semibold hover:underline ml-[9rem] " >Back </Link>
       </div>
-    <div className="h-[100vh] w-[100vw] flex justify-between items-center mt-[7em]">
+    <div className="w-[100vw] flex justify-between items-center mt-[7em] h-[200%]">
       
 
       {isLoading ? ( <Loader /> ) : error ? ( <Message variant="danger">{error?.data || error.message}</Message>

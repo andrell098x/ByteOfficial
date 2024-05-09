@@ -30,7 +30,7 @@ const Home = () => {
             </div>
 
             <div>
-              <div className="flex justify-center flex-wrap mt-[2rem]">
+              <div className="flex justify-center flex-wrap mt-[2rem] overflow-x-hidden ">
                 {data.products.map((product) => (
                   <div className='my-[3rem] ' key={product._id}>
                     <Product product={product}/>

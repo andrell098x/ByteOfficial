@@ -5,7 +5,7 @@ import Product from './Product';
 const Favorites = () => {
     const favorites = useSelector(selectFavoriteProduct)
   return (
-    <div className='pt-[10rem] px-[5rem] w-[100vw]'>
+    <div className='pt-[10rem] px-[5rem] w-[100vw] overflow-x-hidden'>
       <h1 className='text-lg font-bold'>Favorites</h1>
 
       <div className="flex flex-wrap w-full h-full items-center ">
