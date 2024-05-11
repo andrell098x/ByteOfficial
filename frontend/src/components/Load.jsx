@@ -170,6 +170,10 @@ const Load = () => {
             z-index: -1;
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
           }
+          .text-[green] {
+            color: green; /* or any other style you want */
+          }
+          
         `}
       </style>
       <div className="pre-loader">
@@ -177,8 +181,8 @@ const Load = () => {
         <div className="loader-bg"></div>
       </div>
       <div className="loader-content">
-        <div className="count"><p ref={counterEle}>@</p></div>
-        <div className="copy"><p className="ml16" ref={textWrapRef}>BYTE Buy</p></div>
+        <div className="count"><p ref={counterEle}></p></div>
+        <div className="copy"><p className="ml16" ref={textWrapRef}>BYTE <span className='text-[green]'>Buy</span></p></div>
       </div>
       <div className="loader-2"></div>
     </div>

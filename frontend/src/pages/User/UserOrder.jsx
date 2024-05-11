@@ -10,7 +10,7 @@ const UserOrder = () => {
 
 
   return (
-    <div className='container mx-auto mt-[10rem] w-[100vw] flex justify-center flex-col px-[4rem]'>
+    <div className='container mt-[10rem] w-[100vw] ml-[2rem] flex justify-center flex-col'>
       <h2 className="text-2xl font-semibold mb-4">
         My Orders
       </h2>
@@ -32,19 +32,20 @@ const UserOrder = () => {
             <tbody>
                 {orders.map((order) => (
                     <tr key={order._id}>
+                        <Link to={`/order/${order._id}`}>
                         <img src={order.orderItems[0].image} alt={order.user} className='w-[6rem] h-[6rem] mb-5'/>
-
-                        <td className='p-2'>{order._id}</td>
+                        </Link>
+                        <td className='p-2 object-cover contain-content'>{order._id}</td>
                         <td className='p-2'>{order.createdAt.substring(0, 10)}</td>
                         <td className='p-2'>$ {order.totalPrice}</td>
 
                         <td className='py-2'>
                             {order.isPaid ? (
-                                <p className="p-1 text-center bg-green-300 w-[6rem] rounded-full">
+                                <p className="p-1 text-center contain-content bg-green-300 w-[2rem] md:w-[3rem] lg:w-[4rem] xl:w-[6rem] rounded-full">
                                     Completed
                                 </p>
                             ) : (
-                                <p className="p-1 text-center bg-red-300 w-[6rem] rounded-full">
+                                <p className="p-1 text-center contain-content bg-red-300 w-[2rem] md:w-[3rem] lg:w-[4rem] xl:w-[6rem]   rounded-full">
                                     Pending
                                 </p>
                             ) }
@@ -52,11 +53,11 @@ const UserOrder = () => {
 
                         <td className='py-2'>
                             {order.isDelivered ? (
-                                <p className="p-1 text-center bg-green-300 w-[6rem] rounded-full">
+                                <p className="p-1 text-center contain-content bg-green-300 w-[2rem] md:w-[3rem] lg:w-[4rem] xl:w-[6rem] rounded-full">
                                 Completed
                                 </p>
                             ) : (
-                                <p className="p-1 text-center bg-red-300 w-[6rem] rounded-full">
+                                <p className="p-1 text-center contain-content bg-red-300 w-[2rem] md:w-[3rem] lg:w-[4rem] xl:w-[6rem] rounded-full">
                                     Pending
                                 </p>
                             )}
@@ -64,7 +65,7 @@ const UserOrder = () => {
 
                         <td>
                             <Link to={`/order/${order._id}`}>
-                                <button className='bg-black text-white rounded px-2 py-2'>Details</button>
+                                <button className='bg-black text-white rounded px-[2rem] py-2'>Details</button>
                             </Link>
                         </td>
                     </tr>

@@ -55,9 +55,9 @@ const Login = () => {
 
 
     <div className='bg-[#131417] h-[100vh] flex items-center justify-center main-cont'>
-        <section className="pl-[5rem] pb-[5rem] flex flex-wrap w-[60%] bg-[#e3eae0] z-[1]">
-            <div className="mr-[4rem] mt-[4rem]">
-                <h1 className="text-2xl font-semibold mb-4">Sign in</h1>
+        <section className="-[5rem] grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 h-[90%] md:h-[90%] lg:h-[65%] xl:h-[65%] overflow-hidden    w-[60%] bg-[#e3eae0] z-[1]">
+            <div className=" mt-[4rem]">
+                <h1 className="text-2xl font-semibold mb-[5rem] text-center text-[3rem]">Sign in</h1>
 
 
                 <form onSubmit={submitHandler} className='container w-full flex justify-center items-center flex-col'>
@@ -79,16 +79,11 @@ const Login = () => {
 
 
 
-                    <button disabled={isLoading} type='submit' className='bg-[#000000] text-white px-4 py-2 cursor-pointer my-[1rem] hover:border rounded  hover:bg-[#f8f8f8] hover:border-[black] hover:text-black '>{isLoading ? "Logging in..." : "Login"}</button>
+                    <button disabled={isLoading} type='submit' className='bg-[#000000] text-white px-[77px] py-2 cursor-pointer my-[1rem] hover:border rounded  hover:bg-[#f8f8f8] hover:border-[black] hover:text-black transition-all duration-300 '>{isLoading ? "Logging in..." : "Login"}</button>
 
                     {isLoading && <Loader />}
-                </form>
-
-
-
-
-
-                <div className="mt-4">
+                    
+                <div className="mt-4 place-self-center">
                     <p className='text-[black]'>
                         Don't have an account? {" "} 
                         <Link
@@ -99,10 +94,16 @@ const Login = () => {
                         </Link>
                     </p>
                 </div>
+                </form>
+
+
+
+
+
 
             </div>
             
-        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" className='h-[200px] w-[200px] ml-[190px] mt-[120px]'
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg" className='h-[200px] w-[200px] place-self-center '
                                  width="1280.000000pt" height="552.000000pt" viewBox="0 0 1280.000000 552.000000"
                                  preserveAspectRatio="xMidYMid meet">
                                 

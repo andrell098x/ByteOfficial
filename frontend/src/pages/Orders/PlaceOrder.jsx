@@ -51,14 +51,14 @@ const PlaceOrder = () => {
 console.log
 
   return (
-    <div className='mt-[10rem]'>
+    <div className='mt-[12rem] mb-[30rem]'>
         <ProgressSteps step1 step2 step3/>
 
-        <div className="container mx-auto mt-8 w-[60rem] flex flex-col h-[100vh] gap-8">
+        <div className="container mx-auto mt-8 w-[100vw] flex flex-col gap-8">
             {cart.cartItems.length === 0 ? (
                 <Message>Cart is empty</Message>
             ): (
-             <div className='overflow-x-auto'>
+             <div className=''>
                 <table className='w-full border-collapse'>
                     <thead>
                         <tr>
@@ -75,7 +75,7 @@ console.log
                         {cart.cartItems.map((item, index) => (
                             <tr key={index}>
                                 <td className='p-2'>
-                                     <img src={item.image} alt={item.name} className='w-[10rem] h-[10rem] object-cover'/>
+                                     <img src={item.image} alt={item.name} className='w-[20rem] h-[20rem] object-cover'/>
                                 </td>
                                 <td>
                                     <Link to={`/product/${item.product}`}>{item.name}</Link>
@@ -91,9 +91,9 @@ console.log
              </div>   
             )}
 
-<div className="mt-8">
-                            <h2 className="text-2xl font-semibold mb-5">Order Summary</h2>
-                            <div className="flex justify-between flex-wrap p-8 ">
+                    <div className="mt-8 w-[100vw] grid place-items-center">
+                            <h2 className="text-xl font-semibold mb-5">Order Summary</h2>
+                            <div className="grid place-items-center grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 p-8 ">
                                 <ul className="text lg">
                                     <li>
                                         <span className='mb-4 font-semibold'>Items</span> $
@@ -116,7 +116,7 @@ console.log
                                 {error && <Message variant='danger'>{error.data.message}</Message>}
 
                                 <div>
-                                    <h2 className='text-2xl font-semibold mb-4'>Shippings</h2>
+                                    <h2 className='text-xl font-semibold mt-[6rem] md:mt-0 lg:mt-0 xl:mt-0'>Shippings</h2>
                                     <p>
                                         <strong>Address</strong>
                                         <ul>
@@ -130,7 +130,7 @@ console.log
                                 </div>
 
                                 <div>
-                                    <h2 className="text-2xl font-semibold mb-4">
+                                    <h2 className="text-xl font-semibold mt-[6rem] md:mt-0 lg:mt-0 xl:mt-0">
                                         Payment Method
                                     </h2>
                                     <strong>method</strong> {" "}
@@ -138,7 +138,7 @@ console.log
                                 </div>
                             </div>
 
-                            <button type='button' className='bg-black text-white py-2 px-4 rounded-full text-lg w-full mt-4' disabled={cart.cartItems === 0} onClick={placeOrderHandler}>Place Order</button>
+                            <button type='button' className='bg-black text-white py-2 px-4 rounded-full text-lg w-[50%] mt-4' disabled={cart.cartItems === 0} onClick={placeOrderHandler}>Place Order</button>
 
                             {isLoading && <Loader />}
                         </div>

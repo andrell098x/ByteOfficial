@@ -5,10 +5,10 @@ import Product from './Product';
 const Favorites = () => {
     const favorites = useSelector(selectFavoriteProduct)
   return (
-    <div className='pt-[10rem] px-[5rem] w-[100vw] overflow-x-hidden'>
-      <h1 className='text-lg font-bold'>Favorites</h1>
+    <div className='pt-[10rem] px-[5rem] w-[100vw] overflow-x-hidden '>
+      <h1 className='text-[1.5rem] font-bold'>Favorites</h1>
 
-      <div className="flex flex-wrap w-full h-full items-center ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 w-full h-full place-items-center gap-[4.8rem]">
         {favorites.map((product) => (
             <Product key={product._id} product={product} />
         ))}

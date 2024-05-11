@@ -57,7 +57,7 @@ const UserList = () => {
   return (
     <>
      <h1 className="text-3xl font-bold mb-1 text-center w-[40%] mt-[70px]  ">Manage Users</h1>
-    <div className="pl-[70px] flex justify-center flex-col items-center h-[70vh]">
+    <div className="flex justify-center flex-col items-center h-[70vh]">
      
       {isLoading ? (
         <Loader />
@@ -66,16 +66,16 @@ const UserList = () => {
           {error?.data?.message || error.error}
         </Message>
       ) : (
-        <div className="flex flex-col md:flex-row border-black border-[2px] h-[25rem] w-[80rem] ">
-          <table className="w-full md:w-4/5 mx-auto">
+        <div className="flex flex-col md:flex-row h-[25rem] w-[50rem] object-contain md:w-[50rem] lg:w-[70rem] xl:w-[80rem]">
+          <table className="w-[50%] md:w-4/5 mx-auto object-contain">
             <thead>
               <tr>
-                <th className="px-4 py-2 text-left">ID</th>
-                <th className="px-4 py-2 text-left">NAME</th>
-                <th className="px-4 py-2 text-left">EMAIL</th>
-                <th className="px-4 py-2 text-left">ADMIN</th>
-                <th className="px-4 py-2 text-left">OPERATIONS</th>
-                <th className="px-4 py-2"></th>
+                <th className="px-2 py-2 text-left">ID</th>
+                <th className="px-2 py-2 text-left">NAME</th>
+                <th className="px-2 py-2 text-left">EMAIL</th>
+                <th className="px-2 py-2 text-left">ADMIN</th>
+                <th className="px-2 py-2 text-left">OPERATIONS</th>
+                <th className="px-2 py-2"></th>
               </tr>
             </thead>
             <tbody>

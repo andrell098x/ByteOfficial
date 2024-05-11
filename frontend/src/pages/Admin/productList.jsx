@@ -73,7 +73,7 @@ const ProductList = () => {
   };
 
   return (
-    <div className="container xl:mx-[9rem] sm:mx-[0] ">
+    <div className="container xl:mx-[9rem] sm:mx-[0] mt-[150px] ">
       <div className="flex flex-col md:flex-row">
         <div className="md:w-3/4 p-3">
           <div className="h-12 text-4xl">Add Product</div>
@@ -88,8 +88,8 @@ const ProductList = () => {
             </div>
           )}
 
-          <div className="mb-3 ml-[70px]">
-            <label className="border flex justify-center items-center text-[#aeacac] px-4 w-full text-center rounded-lg cursor-pointer  py-11 h-[50vh] text-2xl ">
+          <div className="mb-3 ml-[13rem]">
+            <label className="border  flex justify-center items-center text-[#aeacac] px-4 w-[50rem] text-center rounded-lg cursor-pointer  py-11 h-[20vh] text-2xl ">
               {image ? image.name : "Upload Image"}
 
               <input

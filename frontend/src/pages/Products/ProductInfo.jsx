@@ -61,17 +61,17 @@ const ProductInfo = () => {
   return (
     <>
       <div className="mt-[10rem] text-2xl ">
-        <Link to="/" className="text-black font-semibold hover:underline ml-[9rem] " >Back </Link>
+        <Link to="/" className="text-black font-semibold hover:underline ml-[3rem] md:ml-[5rem] lg:ml-[6rem] xl:ml-[8rem]" >Back </Link>
       </div>
-    <div className="w-[100vw] flex justify-between items-center mt-[7em] h-[200%]">
+    <div className="w-[100vw] flex justify-center items-center mt-[7em] h-[200%]">
       
 
       {isLoading ? ( <Loader /> ) : error ? ( <Message variant="danger">{error?.data || error.message}</Message>
       ) : (
         <>
-          <div className="flex flex-wrap relative items-between justify-between mt-[2rem] ml-[10rem] flex-row w-[70rem]">
+          <div className="relative grid gap-x-[10rem] gap-y-[10rem] place-items-center grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 mt-[2rem] w-[80vw]">
             <div>
-              <img src={product.image} alt={product.name} className="w-[40rem] h-[30rem] object-cover xl:w-[20rem] lg:w-[45rem] md:w-[30rem] sm:w-[20rem] mr-[2rem] mt-[10px] shadow-lg ring-opacity-25 ring-offset-32 "
+              <img src={product.image} alt={product.name} className="w-[20rem] h-[30rem] object-cover xl:w-[30rem] lg:w-[30rem] md:w-[30rem] sm:w-[20rem] mr-[2rem] mt-[10px] shadow-lg ring-opacity-25 ring-offset-32 "
               />
               <HeartIcon product={product} />
             </div>
@@ -135,13 +135,13 @@ const ProductInfo = () => {
               </div>
 
               <div className="btn-container">
-                <button disabled={product.countInStock === 0} onClick={addToCartHandler} className="bg-black text-white py-2 px-4 rounded-lg mt-4 md:mt-0">
+                <button disabled={product.countInStock === 0} onClick={addToCartHandler} className="bg-black text-white py-2 px-4 rounded-lg mt-[3rem]">
                   Add To Cart
                 </button>
               </div>
             </div>
 
-            <div className="mt-[5rem] container flex flex-wrap items-start justify-between ml-[10rem]">
+            <div className="mt-[5rem] container flex flex-wrap items-start justify-center ml-[7rem]">
                 <ProductTabs loadingProductReview={loadingProductReview} userInfo={userInfo} submitHandler={submitHandler} rating={rating} setRating={setRating} comment={comment} setComment={setComment} product={product}/>
             </div>
           </div>

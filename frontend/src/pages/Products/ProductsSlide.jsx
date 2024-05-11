@@ -79,7 +79,7 @@ const ProductsSlide = () => {
                     {error?.data?.message || error.message}
                 </Message>
             ) : (
-                <Slider {...settings} className='xl:w-[100vw] lg:w-[50rem] md:w-[56rem] sm:w-[40rem] sm:block '>
+                <Slider {...settings} className='xl:w-[100vw] lg:w-[100vw] md:w-[100vw] sm:w-[100vw] sm:block '>
                     {products.map(({ image, _id, name, price, description, brand, createdAt, numReviews, rating, quantity, inStock }) => (
                         <div key={_id} className="product-slide">
                             <img src={image} alt={name} className="items w-full rounded-lg object-cover h-[50rem]" />

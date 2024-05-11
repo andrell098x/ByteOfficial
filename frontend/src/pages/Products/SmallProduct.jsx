@@ -4,7 +4,7 @@ import HeartIcon from "./HeartIcon";
 
 const SmallProduct = ({product}) => {
     return (
-        <div className="w-[20rem] h=[15rem] ml-[2rem] p-3 cursor-pointer">
+        <div className="w-[20rem] h-[20rem] ml-[2rem] p-3 cursor-pointer">
             <div className="relative">
             <HeartIcon product={product} />
             <Link to={`/product/${product._id}`}>

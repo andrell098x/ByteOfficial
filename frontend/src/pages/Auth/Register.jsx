@@ -63,16 +63,16 @@ const Register = () => {
   return (
     <>
 
-        <section className="pl-[10rem] flex-wrap h-[100vh] flex items-center justify-center bg-[#131417]">
+        <section className="w-[100vw] flex-wrap h-[100vh] flex items-center justify-center bg-[#131417]">
             <Block />
-            <div className="mr-[4rem] mt-[1rem] w-[60%] flex items-center justify-center flex-col bg-[#e3eae0] z-[500] border rounded-[20px]">
+            <div className="mt-[1rem] w-[60%] flex items-center justify-center flex-col bg-[#e3eae0] z-[500]">
                 <div className='w-full text-left pl-[6rem] pt-[2rem]'>
                     <h1 className="text-2xl font-semibold mb-4">Sign up</h1>
                 </div>
 
                 <form onSubmit={submitHandler}
-                 className="container w-[40rem]">
-                    <div className="my-[2rem]">
+                 className="container w-[15rem] md:w-[20rem] lg:w-[30rem] xl:w-[35rem]">
+                    <div>
                         <label htmlFor="name" className='block text-sm font-medium text-[#6e706d]'>Name</label>
                         <input type="text" id='name' className='mt-1 p-2 border rounded w-full' placeholder='Enter Name' value={username}
                         onChange={(e) => setUsername(e.target.value)}/>
@@ -85,7 +85,7 @@ const Register = () => {
                     </div>
                     <div className="my-[2rem]">
                         <label htmlFor="password" className='block text-sm font-medium text-[#6e706d]'>Password</label>
-                        <input type="text" id='password' className='mt-1 p-2 border rounded w-full' placeholder='Enter Password' value={password}
+                        <input type="password" id='password' className='mt-1 p-2 border rounded w-full' placeholder='Enter Password' value={password}
                         onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                     <div className="my-[2rem]">
@@ -95,7 +95,7 @@ const Register = () => {
                     </div>
 
                     <button disabled={isLoading}
-                    type='submit' className='bg-black border-2  text-white cursor-pointer rounded-md my-[1rem] px-[290px] py-4  hover:bg-[#e3eae0] hover:border-black hover:text-black'>{isLoading ? "Registering..." : "Register"}</button>
+                    type='submit' className='bg-black border-2  text-white cursor-pointer rounded-md my-[1rem] w-full py-4  hover:bg-[#e3eae0] hover:border-black hover:text-black transition-all duration-300'>{isLoading ? "Registering..." : "Register"}</button>
 
 
                     {isLoading && <Loader />}

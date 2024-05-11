@@ -71,8 +71,8 @@ const Product = () => {
 
   return (
     <>
-     <div className='overflow-y-auto overflow-x-hidden mr-[40rem] w-[80rem]'>
-     <h2 className="h4 text-left  mx-[8rem] font-semibold text-5xl mt-[7rem]">
+     <div className='overflow-y-auto mt-[4rem] mr-[40rem] w-[80rem]'>
+     <h2 className="text-left mx-[8rem] font-semibold text-3xl md:text-4xl lg:text-4xl xl:text-4xl mt-[7rem]">
               {products?.length} Products
             </h2>
       <div className="container ">
@@ -80,8 +80,8 @@ const Product = () => {
           <div className="p-3">
            
 
-            <div className="flex w-[90%] pl-[4rem]">
-              <div className="h-[100vh] w-[100vw] flex items-center flex-wrap">
+            <div className="flex w-full">
+              <div className="mb-[10rem] grid place-items-center grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {products.length === 0 ? (
                     <Loader />
                 ) : (
@@ -96,8 +96,8 @@ const Product = () => {
           </div>
 
 
-
-          <div className='bg-[#ffffff] p-3 mt-2 mb-2 absolute right-0 top-[7rem] w-[18rem]'>
+          
+          <div className='bg-[#ffffff] p-3 mt-2 mb-2 absolute right-0 top-[7rem] md:w-[10rem] lg:w-[13rem] xl:w-[18rem] hidden md:block lg:block xl:block overflow-x-hidden'>
             <h2 className='h4 text-center py-2 bg-white rounded-full mb-2'>Filter by Categories</h2>
 
             <div className="p-5 w-[15rem]">
@@ -130,7 +130,7 @@ const Product = () => {
 
             <h2 className="h4 text-center py-2 bg-white rounded-full mb-2">Filter by Price</h2>
 
-            <div className='p-5 w-[15rem]'>
+            <div className='p-5 w-[10rem] lg:w-[13rem] xl-[15rem]'>
               <input type="number" placeholder='Enter Price' value={priceFilter} onChange={handlePriceChange} className='w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:ring focus:border-black'/>
             </div>
 

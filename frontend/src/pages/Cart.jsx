@@ -33,13 +33,13 @@ const Cart = () => {
     <>
       <div className='container flex justify-around items-start flex-wrap mx-auto mt-[10rem] h-[100vh]'>
         {cartItems.length === 0 ? (
-        <div>Your Cart section is empty <Link to='/shop'>Back</Link></div>) : (
+        <div className='grid place-self-center'>Your Cart section is empty <Link to='/shop'>Back</Link></div>) : (
         <>
-          <div className="flex flex-col w-[80%]">
-            <h1 className="text-2xl font-semibold mb-4">Shopping Cart</h1>
+          <div className="grid place-items-center grid-cols-1 w-full">
+            <h1 className="text-2xl font-semibold mb-[4rem]">Shopping Cart</h1>
 
             {cartItems.map((item) => (
-              <div key={item._id} className='flex items-center mb-[1rem] pb-2'>
+              <div key={item._id} className='flex items-center flex-row gap-x-[4rem] md:gap-x-[6rem] lg:gap-x-[10rem] xl:gap-x-[15rem] mb-[1rem] pb-2'>
                 <div className='w-[5rem] h-[5rem]'>
                   <img src={item.image} alt={item.name} className='w-full h-full object-cover rounded'/>
                 </div>
@@ -66,7 +66,7 @@ const Cart = () => {
 
 
                 <div>
-                  <button className='text-black mr-[5rem]' onClick={() => deleteFromCartHandler(item._id)}>
+                  <button className='text-black mr-[2rem]' onClick={() => deleteFromCartHandler(item._id)}>
                     <FaTrash className='ml-[1rem]'/>
                   </button>
                 </div>
@@ -75,16 +75,16 @@ const Cart = () => {
 
 
             <div className="mt-8 w-[40rem]">
-              <div className="p-4 rounded-lg">
-                <h2 className="text-xl font-semibold mb-2">
+              <div className="p-4 rounded-lg grid">
+                <h2 className="text-xl font-semibold mb-2 ml-[4rem] md:ml-[3.5rem] lg:ml-[3rem] xl:ml-[3rem]">
                   Items ({cartItems.reduce((acc, item) => acc + item.qty, 0)}){" "}
                 </h2>
 
-                <div className="text-2xl font-bold">
+                <div className="text-2xl font-bold ml-[4rem] md:ml-[3.5rem] lg:ml-[3rem] xl:ml-[3rem]">
                   $ {cartItems.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)}
                 </div>
 
-                <button className='bg-black mt-4 py-2 px-4 rounded-full text-white text-lg w-full' disabled={cartItems.length === 0} onClick={checkOutHandler}>Proceed Checkout</button>
+                <button className='bg-black my-[4.7rem] py-2 px-4 rounded-full h-[4.5rem] text-white text-lg w-[50%] md:w-[75%] lg:w-[94%] x-full place-self-center' disabled={cartItems.length === 0} onClick={checkOutHandler}>Proceed Checkout</button>
               </div>
             </div>
           </div>

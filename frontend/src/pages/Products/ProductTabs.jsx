@@ -26,8 +26,8 @@ const ProductTabs = ({loadingProductReview, userInfo, submitHandler, rating, set
 
 
   return (
-    <div className='flex flex-col md:flex-row'>
-      <section className='mr-[5rem]'>
+    <div className='flex flex-col md:flex-col justify-center'>
+      <section className='mr-[5rem] grid grid-cols-3'>
         <div className={`flex-1 p-4 cursor-pointer text-lg ${activeTab === 1 ? "font-bold" : ""}`} onClick={() => handleTabClick(1)}>Comment</div>
 
         <div className={`flex-1 p-4 cursor-pointer text-lg ${activeTab === 2 ? "font-bold" : ""}`} onClick={() => handleTabClick(2)}>All Reviews</div>
@@ -61,7 +61,7 @@ const ProductTabs = ({loadingProductReview, userInfo, submitHandler, rating, set
                         <div className="my-2">
                             <label htmlFor="comment" className='block text-xl mb-2'>Comments</label>
 
-                            <textarea id='comment' required rows='3' value={comment} onChange={e => setComment(e.target.value)} className='p-2 border rounded-lg xl:w-[40rem] text-black'></textarea>
+                            <textarea id='comment' required rows='3' value={comment} onChange={e => setComment(e.target.value)} className='p-2 border rounded-lg w-[30rem] md:w-[35rem] lg:w-[40rem] xl:w-[40rem] text-black'></textarea>
                         </div>
 
                         <button type='submit' disabled={loadingProductReview} className='bg-black text-white py-2 px-4 rounded-lg'>Submit</button>

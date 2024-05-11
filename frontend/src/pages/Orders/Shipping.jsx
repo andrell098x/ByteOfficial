@@ -40,7 +40,7 @@ const Shipping = () => {
     <div className='container mx-auto pt-[10rem]'>
         <ProgressSteps step1 step2/>
         <div className="pt-[5rem] flex justify-around items-center flex-wrap">
-            <form onSubmit={submitHandler} className='w-[50rem]'>
+            <form onSubmit={submitHandler} className='w-[30rem] md:w-[40rem] lg:w-[50rem] xl:w-[50rem]'>
                 <h1 className="text-2xl font-semibold mb-4">Shipping</h1>
                 <div className="mb-4">
                     <label className='block text-black mb-2'>Address</label>

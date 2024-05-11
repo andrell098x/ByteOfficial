@@ -4,8 +4,9 @@
     height: 7rem;
     display: flex;
     flex-direction: row;
-    padding: 0 8rem;
 }
+
+
 
 
 .nav-item-name {
